@@ -4,7 +4,9 @@ An automated job application system that uses Playwright MCP (Model Context Prot
 
 ## Demo Video
 
-![Job Application Demo](https://github.com/user-attachments/assets/demo-video-placeholder)
+https://github.com/user/repo/assets/video.mp4
+
+[Watch Demo Video](https://rakeshbhugra-website-assets.s3.ap-south-1.amazonaws.com/job-application-demo.mp4)
 
 *Note: The video is sped up for demonstration purposes. The actual process takes longer as the bot carefully fills out each field.*
 
