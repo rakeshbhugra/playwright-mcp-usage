@@ -20,11 +20,12 @@ def get_prompt(resume_text: str) -> str:
         raise ValueError("Environment variables WORKDAY_EMAIL and WORKDAY_PASS must be set")
     prompt = f'''
 
-    go to https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/details/Senior-AI-and-ML-Engineer---AI-for-Networking_JR2000376?q=ml%20engineer
+    go to google.com search for nvidia jobs.
+    Go to workday jobs page.
+    go to wd5.myworkdayjobs only after searching
+    
     login with my email: {workday_email} with password: {workday_pass}.
     
-    go to wd5.myworkdayjobs only after searching
-
     search for a job based on the resume details use broad search, don't make it too specific.
 
     pickup any job that matches the resume details and apply for it.
