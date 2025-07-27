@@ -27,18 +27,26 @@ async def reasoning_node(state: State) -> State:
 
     # print("llm_response:", json.dumps(llm_response, indent=2, default=str))
 
-    content = llm_response["choices"][0]["message"]["content"]
-    if content:
-        state.messages.append(AIMessage(content=content))
-    else:
-        state.messages.append(llm_response["choices"][0]["message"])
-
     tool_calls = llm_response["choices"][0]["message"].get("tool_calls")
+    
     if tool_calls and len(tool_calls) > 0:
-        state.openai_tool = tool_calls[0]
+        # Append the full assistant message with all tool calls
+        state.messages.append(llm_response["choices"][0]["message"])
+        
+        # Pass all tool calls to the tool_use_node
+        if len(tool_calls) > 1:
+            state.openai_tools = tool_calls
+            state.openai_tool = None  # Clear single tool for clarity
+        else:
+            state.openai_tool = tool_calls[0]
+            state.openai_tools = None  # Clear multiple tools for clarity
+            
         state.next_node = NodeNames.TOOL_USE_NODE
     else:
+        content = llm_response["choices"][0]["message"]["content"]
+        state.messages.append(AIMessage(content=content))
         state.openai_tool = None
+        state.openai_tools = None
         state.next_node = NodeNames.END
         
         print('\n\nFinal response from LLM:', state.messages[-1]['content'])
