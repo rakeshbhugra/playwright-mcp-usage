@@ -31,7 +31,7 @@ class PlaywrightGraph:
             self._route_to_next_node,
             {
                 "tool_use_node": "tool_use",
-                END: END
+                "END": END
             }
         )
         graph.add_edge("tool_use", "reasoning")
