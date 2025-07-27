@@ -7,5 +7,5 @@ def SystemMessage(content):
 def HumanMessage(content):
     return {'role': 'user', 'content': content}
 
-def AnyMessage(content, role):
-    return {'role': role, 'content': content}
+def AnyMessage(content, role, **kwargs):
+    return {'role': role, 'content': content, **kwargs}
