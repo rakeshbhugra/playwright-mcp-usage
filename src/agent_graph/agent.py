@@ -21,7 +21,6 @@ class PlaywrightAgent:
                 ):
 
                 async with ClientSession(read_stream, write_stream) as session:
-                    # Use history_messages as they are (already dicts) and add user message
                     
                     await session.initialize()
 
