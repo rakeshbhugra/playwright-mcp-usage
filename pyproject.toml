@@ -10,4 +10,6 @@ dependencies = [
     "langgraph>=0.5.4",
     "litellm>=1.74.8",
     "mcp>=1.12.2",
+    "pymupdf>=1.26.3",
+    "pypdf2>=3.0.1",
 ]
