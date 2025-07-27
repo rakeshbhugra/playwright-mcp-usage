@@ -4,7 +4,7 @@ from langgraph.config import StreamWriter
 from mcp import ClientSession
 
 class State(BaseModel):
-    messages: list[dict]
+    messages: list[Any]
     session: Optional[ClientSession] = None
     writer: Optional[StreamWriter] = None
     openai_tool: Optional[Any] = None
