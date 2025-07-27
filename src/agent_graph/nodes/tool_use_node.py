@@ -1,5 +1,6 @@
 from ..state import State
 from litellm import experimental_mcp_client
+from src.utils.llm.message_helper import AnyMessage
 
 async def tool_use_node(state: State) -> State:
 
@@ -9,6 +10,14 @@ async def tool_use_node(state: State) -> State:
         openai_tool=state.openai_tool
     )
 
-    print("MCP Tool Call Result:", call_result)
+    state.messages.append(
+        AnyMessage(
+            content=str(call_result.content[0].text),
+            role="tool",
+            tool_call_id=state.openai_tool.id,
+        )
+    )
+
+    # print("MCP Tool Call Result:", call_result)
 
     return state
