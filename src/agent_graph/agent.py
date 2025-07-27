@@ -30,7 +30,8 @@ class PlaywrightAgent:
                     response = playwright_graph.astream(init_state)
 
                     async for chunk in response:
-                        print(chunk)
+                        # print(chunk)
+                        pass
 
         except asyncio.CancelledError:
             print("Operation was cancelled.")
