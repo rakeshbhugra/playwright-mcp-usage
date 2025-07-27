@@ -63,6 +63,12 @@ class PlaywrightGraph:
             initial_state: The initial state to start with
             **kwargs: Additional arguments passed to graph.astream
         """
+        # Set a higher recursion limit for complex workflows
+        config = kwargs.get("config", {})
+        if "recursion_limit" not in config:
+            config["recursion_limit"] = 100
+            kwargs["config"] = config
+            
         async for chunk in self.compiled_graph.astream(initial_state, **kwargs):
             yield chunk
 
