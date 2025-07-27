@@ -4,10 +4,9 @@ An automated job application system that uses Playwright MCP (Model Context Prot
 
 ## Demo Video
 
-<video width="100%" controls autoplay muted loop>
-  <source src="https://rakeshbhugra-website-assets.s3.ap-south-1.amazonaws.com/job-application-demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![Demo Video](https://img.shields.io/badge/▶️-Watch%20Demo%20Video-red?style=for-the-badge)](https://rakeshbhugra-website-assets.s3.ap-south-1.amazonaws.com/job-application-demo.mp4)
+
+**[Click here to watch the demo video](https://rakeshbhugra-website-assets.s3.ap-south-1.amazonaws.com/job-application-demo.mp4)**
 
 *Note: The video is sped up for demonstration purposes. The actual process takes longer as the bot carefully fills out each field.*
 
