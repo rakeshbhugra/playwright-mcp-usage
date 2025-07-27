@@ -8,6 +8,7 @@ class State(BaseModel):
     session: Optional[ClientSession] = None
     writer: Optional[StreamWriter] = None
     openai_tool: Optional[Any] = None
+    openai_tools: Optional[list[Any]] = None  # Support for multiple tool calls
     next_node: Optional[str] = None
 
     class Config:
